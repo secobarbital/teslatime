@@ -14,6 +14,15 @@
     }
   }
 
+  function handleCommandResponse($el, data, textStatus, jqXHR) {
+    var response = $('<pre></pre>').append(JSON.stringify(data, null, '  '));
+
+    $('<div></div>')
+    .append(response)
+    .append('[<a href="#">clear</a>]')
+    .insertAfter($el);
+  }
+
   function renderForm() {
     $('<form action="/login" method="post">')
     .append('<label for="user_session_email">Email</label>')
@@ -68,19 +77,14 @@
       decorate();
     });
   })
-  .on('click', 'a[href^="/vehicles"]', function(e) {
-    var $el;
-
+  .on('submit', 'form[action^="/vehicles/"]', function(e) {
     e.preventDefault();
-    $el = $(this);
-    $.get(this.href, function(data) {
-      var response = $('<pre></pre>').append(JSON.stringify(data, null, '  '));
-
-      $('<div></div>')
-      .append(response)
-      .append('[<a href="#">clear</a>]')
-      .insertAfter($el);
-    });
+    form = $(this);
+    $.get(form.attr('action'), form.serialize(), handleCommandResponse.bind(this, $(this)));
+  })
+  .on('click', 'a[href^="/vehicles"]', function(e) {
+    e.preventDefault();
+    $.get(this.href, handleCommandResponse.bind(this, $(this)));
   })
   .on('click', 'a:contains(clear)', function(e) {
     e.preventDefault();
