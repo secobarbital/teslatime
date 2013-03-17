@@ -58,7 +58,7 @@
     .append('<form action="' + baseUrl + '/command/set_temps" oninput="driver_temp_output.value=driver_temp.valueAsNumber;passenger_temp_output.value=passenger_temp.valueAsNumber"><label for="set_temps_driver_temp">Driver Temp</label> <output name="driver_temp_output" for="set_temps_driver_temp"></output>&deg;C<input name="driver_temp" id="set_temps_driver_temp" type="range" value="22" min="17" max="32" step="1"><label for="set_temps_passenger_temp">Passenger Temp</label> <output name="passenger_temp_output" for="set_temps_passenger_temp"></output>&deg;C<input name="passenger_temp" id="set_temps_passenger_temp" type="range" value="22" min="17" max="32" step="1"><input type="submit"></form>')
     .append('<a href="' + baseUrl + '/command/auto_conditioning_start">auto_conditioning_start</a><br>')
     .append('<a href="' + baseUrl + '/command/auto_conditioning_stop">auto_conditioning_stop</a><br>')
-    .append('<form action="' + baseUrl + '/command/sun_roof_control"><select name="state"><option value="close">Close</option><option value="vent">Vent</option><option value="comfort">Comfort</option><option value="Open">open</option></select><input type="submit"></form>')
+    .append('<form action="' + baseUrl + '/command/sun_roof_control"><select name="state"><option value="close">Close</option><option value="vent">Vent</option><option value="comfort">Comfort</option><option value="open">Open</option></select><input type="submit"></form>')
     .appendTo('#vehicles');
   }
 
