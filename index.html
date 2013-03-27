@@ -8,11 +8,17 @@
   <p>The <strong>TeslaTime</strong> bookmarklet gives you a browser alternative to the Tesla Motors mobile apps. It is implemented as a bookmarklet to avoid having credentials sent through a third-party.</p>
   <h3>Usage</h3>
   <ol>
-    <li>Drag <a href="javascript:$.getScript('https://raw.github.com/secobarbital/teslatime/master/teslatime.js');">TeslaTime</a> to your bookmark bar</li>
+    <li>Drag <a href="javascript:$.getScript('https://raw.github.com/secobarbital/teslatime/master/teslatime.js');">TeslaTime</a> to your bookmark bar (Internet Explorer users see <a href="#ie">below</a>)</li>
     <li>Visit <a href="https://portal.vn.teslamotors.com">the Tesla Portal</a></li>
     <li>Click on the <strong>TeslaTime</strong> bookmarklet from step 1</li>
     <li>Enjoy!</li>
   </ol>
+  <h3 id="ie">Internet Explorer</h3>
+  <dl>
+    <dt>Drag <a href="javascript:$.getScript('https://rawgithub.com/secobarbital/teslatime/master/teslatime.js');">TeslaTimeIE</a> to your favorites bar</dt>
+    <dd>IE does not allow the execution of remote scripts unless they are served with the correct mime type, which <code>raw.github.com</code> does not. Fortunately, <a href="https://github.com/rgrove">Ryan Grove</a> has created <a href="https://rawgithub.com/">rawgithub</a> which proxies github raw and gist while fixing the mime types. That is what this IE version of the bookmarklet uses.</dd>
+  </dl>
+  <h3>Acknowledgments</h3>
   <p>Many thanks to <a href="https://github.com/timdorr">timdorr</a> for <a href="https://github.com/timdorr/model-s-api">documenting the Tesla API</a></p>
   <a href="https://github.com/secobarbital/teslatime"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
 </body>
